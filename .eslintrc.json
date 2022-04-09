@@ -1,0 +1,73 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "project": "**/tsconfig.json"
+  },
+  "env": {
+    "react-native/react-native": true
+  },
+  "plugins": ["@typescript-eslint", "react", "react-native", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-console": "warn",
+    "no-plusplus": "off",
+    "no-multi-str": "off",
+    "no-continue": "off",
+    "no-confusing-arrow": "off",
+    "react/no-array-index-key": "warn",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition":[2, { "namedComponents": "function-declaration", "unnamedComponents": "arrow-function" }],
+    "max-len": ["error", {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": false,
+        "ignoreTemplateLiterals": false,
+        "ignorePattern": "^import\\s.+\\sfrom\\s.+;$"
+    }],
+    "@typescript-eslint/lines-between-class-members": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+        }
+    ],
+    "no-underscore-dangle": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ],
+  "@typescript-eslint/no-use-before-define": ["error", { "functions": true, "classes": true, "variables": false }],
+  "no-restricted-imports": ["error", {
+    "paths": [{
+      "name": "react-native",
+      "importNames": ["Text"],
+      "message": "Please use Text from /components/Text.tsx instead."
+    }]
+  }]
+  },
+  "settings": {
+    "import/core-modules": [
+      "@expo/vector-icons"
+    ]
+  }
+}
