@@ -1,20 +1,21 @@
+import I18n from 'i18n-js';
 import React, { useCallback, useState } from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import Text from '../components/Text';
 
 const HomeScreen = () => {
-  const [counter, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
 
   const buttonClicked = useCallback(() => {
-    setCounter(counter + 1);
-  }, [counter]);
+    setCount(count + 1);
+  }, [count]);
 
   return (
     <View style={styles.wrapper}>
-      <Text>Hello world! Click the button.</Text>
+      <Text>{I18n.t('screens.home.welcomeText')}</Text>
       <Button
         onPress={() => buttonClicked()}
-        title={`You've clicked ${counter} times.`}
+        title={I18n.t('screens.home.buttonTitle', { count })}
       />
     </View>
   );

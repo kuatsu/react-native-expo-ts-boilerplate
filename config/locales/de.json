@@ -1,0 +1,8 @@
+{
+  "screens": {
+    "home": {
+      "welcomeText": "Hallo, Welt! Klick auf den Button.",
+      "buttonTitle": "Du hast %{count} mal geklickt."
+    }
+  }
+}
