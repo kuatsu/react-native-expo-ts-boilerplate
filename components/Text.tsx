@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default function Text(props: TextProps) {
+const Text = (props: TextProps) => {
   const { children, style } = props;
   const styles = style;
   if (style) {
@@ -23,4 +23,6 @@ export default function Text(props: TextProps) {
       {children}
     </RNText>
   );
-}
+};
+
+export default Text;
