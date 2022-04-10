@@ -10,7 +10,6 @@ import useStore from '../utils/store';
 const HomeScreen = () => {
   const colorScheme = useColorScheme();
   const styles = getThemedStyles(baseStyles, lightStyles, darkStyles, colorScheme);
-  console.log(colorScheme, styles.text);
 
   const { count, incrementCount } = useStore();
 
