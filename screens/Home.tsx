@@ -1,14 +1,15 @@
 import I18n from 'i18n-js';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import Text from '../components/Text';
+import useStore from '../utils/store';
 
 const HomeScreen = () => {
-  const [count, setCount] = useState(0);
+  const { count, incrementCount } = useStore();
 
   const buttonClicked = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+    incrementCount();
+  }, [incrementCount]);
 
   return (
     <View style={styles.wrapper}>
