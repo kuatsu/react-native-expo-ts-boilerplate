@@ -2,7 +2,7 @@
   "expo": {
     "name": "react-native-expo-ts-boilerplate",
     "slug": "react-native-expo-ts-boilerplate",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "entryPoint": "./src/App.tsx",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,7 +21,8 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "de.kuatsu.react-native-expo-ts-boilerplate",
-      "userInterfaceStyle": "automatic"
+      "userInterfaceStyle": "automatic",
+      "buildNumber": "0.0.1"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "de.kuatsu.react_native_expo_ts_boilerplate",
-      "userInterfaceStyle": "automatic"
+      "userInterfaceStyle": "automatic",
+      "versionCode": 440000001
     },
     "web": {
       "favicon": "./assets/favicon.png"
