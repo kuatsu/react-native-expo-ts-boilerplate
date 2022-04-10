@@ -1,6 +1,7 @@
 {
   "screens": {
     "home": {
+      "title": "Welcome",
       "welcomeText": "Hello world! Click the button.",
       "buttonTitle": "You've clicked %{count} times."
     }
