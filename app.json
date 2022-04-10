@@ -3,6 +3,7 @@
     "name": "react-native-expo-ts-boilerplate",
     "slug": "react-native-expo-ts-boilerplate",
     "version": "1.0.0",
+    "entryPoint": "./src/App.tsx",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

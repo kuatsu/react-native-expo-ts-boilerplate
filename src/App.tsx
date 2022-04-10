@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Localization from 'expo-localization';
+import { registerRootComponent } from 'expo';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Outfit_500Medium, Outfit_700Bold } from '@expo-google-fonts/outfit';
 import I18n from 'i18n-js';
@@ -34,5 +35,7 @@ const App = () => {
     <StackNavigator />
   );
 };
+
+registerRootComponent(App);
 
 export default App;
