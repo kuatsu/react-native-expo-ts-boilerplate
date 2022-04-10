@@ -10,10 +10,15 @@ This is a simple boilerplate for React Native apps using Expo and TypeScript. It
 * Localizations using [expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/) and [i18n-js](https://www.npmjs.com/package/i18n-js) 🌍
 * Linting and preconfigured style guides using ESLint and great plugins like [airbnb](https://github.com/airbnb/javascript) and [react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) ✅
 * [Husky](https://github.com/typicode/husky) hook to lint commit messages using [conventional-commit rules](https://github.com/conventional-changelog/commitlint) 🥸
+* Smart semantic versioning using [standard-version](https://github.com/conventional-changelog/standard-version) preconfigured for all version codes in `app.json` 👍
 * Completely open-source using the [MIT license](https://github.com/Kuatsu/react-native-expo-ts-boilerplate/blob/master/LICENSE)! ✨
 
 ## Getting started
 Simply clone this repository using `git clone https://github.com/Kuatsu/react-native-expo-ts-boilerplate my_cool_project` and start working. It's really that simple!
+
+To build a development client, use `eas build --platform all --profile development` (or replace `all` with only `android` or `ios`). To run the bundler, use `expo start -c --dev-client`. For more, please refer to the Expo and EAS documentations.
+
+To update to a new version, refer to the documentation of [standard-version](https://github.com/conventional-changelog/standard-version). The package is pre-configured to smartly update all needed versions and build numbers in both `app.json` and `package.json`.
 
 ## FAQ
 ### Why doesn't this boilerplate use Redux?
