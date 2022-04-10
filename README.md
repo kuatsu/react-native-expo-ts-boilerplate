@@ -3,7 +3,8 @@
 This is a simple boilerplate for React Native apps using Expo and TypeScript. It has the following features:
 * Full TypeScript support 😍
 * Expo, Expo EAS and `expo-dev-client` for easy development and deployment + using previously unsupported native modules with Expo 🚀
-* State management using the lightweight & unopinionated library [zustand](https://github.com/pmndrs/zustand). 🐻
+* State management using the lightweight & unopinionated library [zustand](https://github.com/pmndrs/zustand) 🐻
+* Easy-to-use dark mode using the native `useColorScheme()` hook and a nifty helper function to merge your themed styles! ⚫️⚪️
 * Simple [@react-navigation/native](https://github.com/react-navigation/react-navigation) Stack set-up 🗺
 * Custom `Text` component for easily adding custom font families with different font weights into your project, either from local fonts or Google Fonts using [@expo-google-fonts](https://docs.expo.dev/guides/using-custom-fonts/)! 📝
 * Localizations using [expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/) and [i18n-js](https://www.npmjs.com/package/i18n-js) 🌍
