@@ -16,6 +16,7 @@
   "plugins": ["@typescript-eslint", "react", "react-native", "react-hooks"],
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "no-restricted-syntax": "off",
     "no-console": "warn",
     "no-plusplus": "off",
     "no-multi-str": "off",
