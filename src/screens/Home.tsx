@@ -9,7 +9,7 @@ import useStore from '../utils/store';
 
 const HomeScreen = () => {
   const colorScheme = useColorScheme();
-  const styles = getThemedStyles(baseStyles, lightStyles, darkStyles, colorScheme);
+  const styles = themedStyles[colorScheme || 'light'];
 
   const { count, incrementCount } = useStore();
 
@@ -56,3 +56,5 @@ const darkStyles = StyleSheet.create({
     color: '#fff',
   },
 });
+
+const themedStyles = getThemedStyles(baseStyles, lightStyles, darkStyles);

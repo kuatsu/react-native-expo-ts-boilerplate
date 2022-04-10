@@ -2,24 +2,28 @@ import { StyleSheet, StyleProp } from 'react-native';
 
 type PureStyleObject = Record<string, StyleProp<any>>;
 // eslint-disable-next-line import/prefer-default-export
-export const getThemedStyles = <B extends PureStyleObject, T extends PureStyleObject>(
+export const getThemedStyles = <B extends PureStyleObject, L extends PureStyleObject, D extends PureStyleObject>(
   baseStyles: B,
-  lightStyles: T,
-  darkStyles: T,
-  colorScheme: 'dark' | 'light' | null | undefined,
-): B & T => {
-  const themedStyles = colorScheme === 'dark' ? darkStyles : lightStyles;
-  const builtStyle: PureStyleObject = {};
+  lightStyles: L,
+  darkStyles: D,
+): { light: B & L, dark: B & D } => {
+  const builtLightStyles: PureStyleObject = {};
+  const builtDarkStyles: PureStyleObject = {};
 
   // First, merge the themed styles with the existing base styles
   for (const [styleKey, baseStyleObject] of Object.entries(baseStyles)) {
-    builtStyle[styleKey] = { ...baseStyleObject, ...themedStyles[styleKey] };
+    builtLightStyles[styleKey] = { ...baseStyleObject, ...lightStyles[styleKey] };
+    builtDarkStyles[styleKey] = { ...baseStyleObject, ...darkStyles[styleKey] };
   }
   // Then, add the remaining themed styles
-  for (const [styleKey, themedStyleObject] of Object.entries(themedStyles)) {
-    if (Object.prototype.hasOwnProperty.call(builtStyle, styleKey)) continue;
-    builtStyle[styleKey] = themedStyleObject;
+  for (const [styleKey, themedStyleObject] of Object.entries(lightStyles)) {
+    if (Object.prototype.hasOwnProperty.call(builtLightStyles, styleKey)) continue;
+    builtLightStyles[styleKey] = themedStyleObject;
+  }
+  for (const [styleKey, themedStyleObject] of Object.entries(darkStyles)) {
+    if (Object.prototype.hasOwnProperty.call(builtDarkStyles, styleKey)) continue;
+    builtDarkStyles[styleKey] = themedStyleObject;
   }
 
-  return StyleSheet.create(builtStyle) as B & T;
+  return { light: StyleSheet.create(builtLightStyles) as B & L, dark: StyleSheet.create(builtDarkStyles) as B & D };
 };
