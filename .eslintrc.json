@@ -11,7 +11,8 @@
     "project": "tsconfig.json"
   },
   "env": {
-    "react-native/react-native": true
+    "react-native/react-native": true,
+    "jest": true
   },
   "plugins": ["@typescript-eslint", "react", "react-native", "react-hooks"],
   "parser": "@typescript-eslint/parser",

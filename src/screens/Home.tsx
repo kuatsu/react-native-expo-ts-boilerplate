@@ -23,6 +23,7 @@ const HomeScreen = () => {
       <Button
         onPress={() => buttonClicked()}
         title={I18n.t('screens.home.buttonTitle', { count })}
+        testID="increase_count_button"
       />
     </View>
   );
