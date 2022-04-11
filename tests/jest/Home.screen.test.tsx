@@ -1,14 +1,15 @@
 import React from 'react';
 import '@testing-library/jest-native/extend-expect';
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent } from '@testing-library/react-native';
 import I18n from 'i18n-js';
 import Home from '../../src/screens/Home';
 import Strings from '../../src/config/locales/en.json';
+import renderWithQueryClient from './utils/renderWithQueryClient';
 
 I18n.translations = { en: Strings };
 
 it('should update the counter on click', () => {
-  const { getByTestId } = render(<Home />);
+  const { getByTestId } = renderWithQueryClient(<Home />);
   const button = getByTestId('increase_count_button');
 
   fireEvent.press(button);

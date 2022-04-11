@@ -3,7 +3,8 @@
     "home": {
       "title": "Welcome",
       "welcomeText": "Hello world! Click the button.",
-      "buttonTitle": "You've clicked %{count} times."
+      "buttonTitle": "You've clicked %{count} times.",
+      "loremIpsumTitle": "Some cool lorem ipsum:"
     }
   }
 }

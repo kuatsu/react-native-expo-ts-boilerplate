@@ -5,6 +5,7 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, Outfit_500Medium, Outfit_700Bold } from '@expo-google-fonts/outfit';
 import I18n from 'i18n-js';
 import { connectToDevTools } from 'react-devtools-core';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import Locales from './config/locales';
 import StackNavigator from './navigation';
 
@@ -20,6 +21,8 @@ if (__DEV__) {
   });
 }
 
+const queryClient = new QueryClient();
+
 const App = () => {
   // Don't forget to add new font families to the custom Text component!
   const [fontsLoaded] = useFonts({
@@ -32,7 +35,9 @@ const App = () => {
   if (!fontsLoaded) return <AppLoading />;
 
   return (
-    <StackNavigator />
+    <QueryClientProvider client={queryClient}>
+      <StackNavigator />
+    </QueryClientProvider>
   );
 };
 

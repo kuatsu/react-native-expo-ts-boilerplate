@@ -3,7 +3,8 @@
     "home": {
       "title": "Willkommen",
       "welcomeText": "Hallo, Welt! Klick auf den Button.",
-      "buttonTitle": "Du hast %{count} mal geklickt."
+      "buttonTitle": "Du hast %{count} mal geklickt.",
+      "loremIpsumTitle": "Cooler Lorem Ipsum Text:"
     }
   }
 }

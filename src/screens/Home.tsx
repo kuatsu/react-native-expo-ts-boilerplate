@@ -4,6 +4,7 @@ import {
   Button, View, useColorScheme, StyleSheet,
 } from 'react-native';
 import Text from '../components/Text';
+import { useLoremIpsum } from '../hooks/query/lorem_ipsum';
 import { getThemedStyles } from '../utils/helpers';
 import useStore from '../utils/store';
 
@@ -12,6 +13,7 @@ const HomeScreen = () => {
   const styles = themedStyles[colorScheme || 'light'];
 
   const { count, incrementCount } = useStore();
+  const loremIpsum = useLoremIpsum();
 
   const buttonClicked = useCallback(() => {
     incrementCount();
@@ -25,6 +27,10 @@ const HomeScreen = () => {
         title={I18n.t('screens.home.buttonTitle', { count })}
         testID="increase_count_button"
       />
+      <Text style={[styles.text, styles.title]}>{I18n.t('screens.home.loremIpsumTitle')}</Text>
+      <Text style={[styles.text, styles.textCenter]}>
+        {loremIpsum.isSuccess ? loremIpsum.data.text : 'Couldn\'t load Lorem Ipsum text... 😢'}
+      </Text>
     </View>
   );
 };
@@ -37,6 +43,14 @@ const baseStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    paddingHorizontal: 20,
+  },
+  textCenter: {
+    textAlign: 'center',
+  },
+  title: {
+    fontSize: 18,
+    marginTop: 20,
   },
 });
 
