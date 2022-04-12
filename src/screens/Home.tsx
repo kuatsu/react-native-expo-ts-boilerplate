@@ -4,7 +4,7 @@ import {
   Button, View, useColorScheme, StyleSheet,
 } from 'react-native';
 import Text from '../components/Text';
-import { useLoremIpsum } from '../hooks/query/lorem_ipsum';
+import { useLoremIpsum } from '../hooks/query/loremIpsum';
 import { getThemedStyles } from '../utils/helpers';
 import useStore from '../utils/store';
 
