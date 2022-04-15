@@ -1,29 +1,25 @@
 import I18n from 'i18n-js';
-import React, { useCallback } from 'react';
+import React from 'react';
 import {
   Button, View, useColorScheme, StyleSheet,
 } from 'react-native';
 import Text from '../components/Text';
-import { useLoremIpsum } from '../hooks/query/loremIpsum';
+import { useGetLoremIpsum } from '../hooks/query/loremIpsum';
 import { getThemedStyles } from '../utils/helpers';
-import useStore from '../utils/store';
+import useStore from '../hooks/useStore';
 
 const HomeScreen = () => {
   const colorScheme = useColorScheme();
   const styles = themedStyles[colorScheme || 'light'];
 
   const { count, incrementCount } = useStore();
-  const loremIpsum = useLoremIpsum();
-
-  const buttonClicked = useCallback(() => {
-    incrementCount();
-  }, [incrementCount]);
+  const loremIpsum = useGetLoremIpsum();
 
   return (
     <View style={styles.wrapper}>
       <Text style={styles.text}>{I18n.t('screens.home.welcomeText')}</Text>
       <Button
-        onPress={() => buttonClicked()}
+        onPress={() => incrementCount()}
         title={I18n.t('screens.home.buttonTitle', { count })}
         testID="increase_count_button"
       />

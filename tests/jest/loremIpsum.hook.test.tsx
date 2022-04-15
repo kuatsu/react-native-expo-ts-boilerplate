@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-native/extend-expect';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { renderHook } from '@testing-library/react-hooks';
-import { useLoremIpsum } from '../../src/hooks/query/loremIpsum';
+import { useGetLoremIpsum } from '../../src/hooks/query/loremIpsum';
 
 it('should generate lorem ipsum text', async () => {
   const queryClient = new QueryClient({
@@ -18,7 +18,7 @@ it('should generate lorem ipsum text', async () => {
     </QueryClientProvider>
   );
 
-  const { result, waitFor } = renderHook(() => useLoremIpsum(), { wrapper });
+  const { result, waitFor } = renderHook(() => useGetLoremIpsum(), { wrapper });
 
   await waitFor(() => result.current.isSuccess);
 
