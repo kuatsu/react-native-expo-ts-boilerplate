@@ -24,7 +24,7 @@ const HomeScreen = () => {
         testID="increase_count_button"
       />
       <Text style={[styles.text, styles.title]}>{I18n.t('screens.home.loremIpsumTitle')}</Text>
-      <Text style={[styles.text, styles.textCenter]}>
+      <Text style={[styles.text, styles.textCenter]} testID="lorem_ipsum_text">
         {loremIpsum.isSuccess ? loremIpsum.data.text : 'Couldn\'t load Lorem Ipsum text... 😢'}
       </Text>
     </View>
