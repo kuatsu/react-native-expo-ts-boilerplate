@@ -29,6 +29,9 @@
     "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition":[2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }],
+    "react/style-prop-object": [2, {
+      "allow": ["StatusBar"]
+    }],
     "max-len": ["error", {
         "code": 120,
         "ignoreUrls": true,
